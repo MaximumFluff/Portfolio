@@ -1,0 +1,69 @@
+#face {
+  margin-top: 30px;
+  border-radius: 50%;
+  border: 5px solid silver;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: #285172;
+  height: auto;
+  align-items: center;
+  z-index: 1;
+}
+
+#left a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  float: left;
+  color: whitesmoke;
+  font-size: 1.3em;
+  height: 100%;
+  padding: 17px;
+}
+
+#right a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  float: right;
+  color: whitesmoke;
+  font-size: 1.3em;
+  height: 100%;
+  padding: 12px;
+}
+
+header a:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+#banner { 
+  background-color: #0095f8;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  padding-bottom: 25px;
+}
+
+#banner h1,
+#banner h2 {
+  color: whitesmoke;
+  font-size: 2em;
+}
+
+#banner h1 {
+  font-size: 3em;
+}

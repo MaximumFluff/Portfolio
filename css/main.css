@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('header.css');
+@import url('fadein.css');
+@import url('cursor.css');
+@import url('mobile.css');
+
+:root, body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 4s; /* Firefox < 16 */
+  -ms-animation: fadein 4s; /* Internet Explorer */
+  -o-animation: fadein 4s; /* Opera < 12.1 */
+  animation: fadein 4s;
+  scroll-behavior: smooth;
+}
+
+.portfolio_item {
+  width: 400px;
+  height: 500px;
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: #285172;
+}
+
+.portfolio_item:hover {
+  box-shadow: 0 0 20px rgba(33,33,33,.2);
+}
+
+.portfolio_image {
+  width: 350px;
+  height: 300px;
+  margin: 10px;
+}
+
+.description {
+  padding: 10px;
+}
+
+.section:nth-of-type(2n) {
+  background-color: #e6e9ef;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+.portfolio_row {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  /* width: 50vw; */
+  height: auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 25px;
+  line-height: 1.5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  /* width: 50vw; */
+  height: auto;
+}
+
+.column {
+  width: 20%;
+  margin: 20px;
+  padding: 0;
+}
+
+.right-column {
+  width: 30%;
+  margin: 20px;
+  text-align: justify;
+}
+
+.left-column {
+  width: 30%;
+  margin: 20px;
+  text-align: justify;
+}
+
+.left-column p,
+.right-column p {
+  margin: 0 auto;
+  /* margin-bottom: 40px; */
+  color: #285172;
+  font-size: 1.2em;
+  text-align: left;
+  vertical-align: top;
+  /* margin-left: 10%;
+  margin-right: 10%; */
+}
+
+.column p {
+  color: #285171;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+hr {
+  color: gray;
+  display: block;
+  border-top: solid 2px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  width: 15%;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 20px;
+  color: #285172;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2.25em;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  text-transform: initial;
+}
+
+ul {
+  /* Center an unordered list */
+  list-style: inside;
+  display: inline-block;
+  text-align: left;
+  font-size: 1rem;
+  color: #285172;
+}
+
+li {
+  text-align: left;
+  color: #285172;
+  font-size: 1.2em;
+}
+
+/*
+Transition effects solved with:
+https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-page-load
+*/
+
+@media screen and (max-width: 1200px) {
+
+  header {
+    font-size: 15px;
+  }
+  .left-column {
+    width: 50%;
+  } 
+  .right-column {
+    width: 50%;
+  }
+
+  .column {
+    width: 30%;
+  }
+
+  #face {
+    transform: scale(0.8, 0.8);
+  }
+
+  .portfolio_item {
+    width: 250px;
+    height: auto;
+  }
+
+  .portfolio_image {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  
+  header {
+    font-size: 10px;
+  }
+
+  .left-column, .right-column{
+    margin-top: 5%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    width: auto;
+  }
+
+  #face {
+    transform: scale(0.6, 0.6);
+  }
+
+  .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .portfolio_row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portfolio_item {
+    margin-top: 5%;
+    width: 350px;
+    height: 400px;
+  }
+
+  .column {
+    width: auto;
+  }
+  
+  .left-column p,
+  .right-column p {
+    /* text-align: left; */
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    font-size: 1em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  #banner h1 {
+    font-size: 2em;
+  }
+
+  #banner h2 {
+    font-size: 1em;
+  }
+
+  li {
+    font-size: 1em;
+    margin: 0 auto;
+  }
+  
+  ul {
+    display: inline-block;
+    /* margin-left: 5%; */
+  }
+  
+  #container {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #face {
+    transform: scale(0.5, 0.5);
+  }
+
+  .portfolio_row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portfolio_item {
+    margin-top: 5%;
+    width: 250px;
+    height: 300;
+  }
+}
