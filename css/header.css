@@ -42,8 +42,14 @@ header {
   padding: 12px;
 }
 
+/* Handle color change on mouse cursor hover on nav links */
+
 header a:hover {
   background-color: whitesmoke;
+  color: black;
+}
+
+#left a:hover {
   color: black;
 }
 
