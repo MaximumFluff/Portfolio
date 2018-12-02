@@ -5,8 +5,8 @@
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 100px;
 }
 
 header {
@@ -20,26 +20,19 @@ header {
   z-index: 1;
 }
 
-#left a {
-  display: block;
+#nav_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#nav_links a {
   text-decoration: none;
   text-align: center;
-  float: left;
   color: whitesmoke;
   font-size: 1.3em;
   height: 100%;
   padding: 17px;
-}
-
-#right a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  float: right;
-  color: whitesmoke;
-  font-size: 1.3em;
-  height: 100%;
-  padding: 12px;
 }
 
 /* Handle color change on mouse cursor hover on nav links */
@@ -49,12 +42,20 @@ header a:hover {
   color: black;
 }
 
-#left a:hover {
+#nav_links a:hover {
   color: black;
 }
 
-#banner { 
-  background-color: #0095f8;
+#banner {
+  background-image: url("../images/background_blur.jpg");
+  /* Parralax effect */
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*                  */
+  /* background-color: #0095f8; */
   height: auto;
   display: flex;
   flex-direction: column;

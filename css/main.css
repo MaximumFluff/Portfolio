@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('header.css');
-@import url('fadein.css');
-@import url('cursor.css');
-@import url('mobile.css');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("header.css");
+@import url("fadein.css");
+@import url("cursor.css");
+@import url("mobile.css");
 
-:root, body {
-  width: 100%;
-  height: auto;
+:root,
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 4s; /* Firefox < 16 */
   -ms-animation: fadein 4s; /* Internet Explorer */
@@ -18,57 +17,65 @@
   scroll-behavior: smooth;
 }
 
+.left-column,
+.right-column,
+.column li {
+  font-size: 1.2em;
+}
+
 .portfolio_item {
+  margin: 0;
   width: 400px;
   height: 500px;
   border-style: solid;
   border-width: 3px 3px 3px 3px;
   border-color: #285172;
+  color: #285172;
   animation-name: shrink;
-  animation-duration: 1s;
+  animation-duration: 0.25s;
 }
 
 .portfolio_item:hover {
-  /*box-shadow: 0 0 20px rgba(33,33,33,.2);*/
   animation-name: expand;
-  animation-duration: 1s;
+  animation-duration: 0.25s;
   animation-fill-mode: forwards;
-  
+}
+
+#portfolio {
+  height: auto;
 }
 
 @keyframes expand {
   from {
-    border-width: 3px 3px 3px 3px;
-    border-color: #285172;
+    transform: translateY(0px);
   }
 
   to {
-    /* padding: 10px; */
-    border: 3px solid #285172;
-    box-shadow:  -1px 1px #285172,
-		 -2px 2px #285172,
-		 -3px 3px #285172,
-		 -4px 4px #285172,
-		 -5px 5px #285172;
+    transform: translateY(-10px);
+    box-shadow: 5px 10px 8px gray;
   }
 }
 
 @keyframes shrink {
   from {
-    /* padding: 10px; */
-    border: 3px solid #285172;
-    box-shadow:  -1px 1px #285172,
-		 -2px 2px #285172,
-		 -3px 3px #285172,
-		 -4px 4px #285172,
-		 -5px 5px #285172;
+    transform: translateY(-10px);
+    box-shadow: 5px 10px 8px gray;
   }
 
   to {
-    border-width: 3px 3px 3px 3px;
-    border-color: #285172;
+    transform: translateY(0px);
+    box-shadow: none;
   }
-} 
+}
+
+.icon_footer {
+  margin-bottom: 10px;
+  width: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 .portfolio_image {
   width: 350px;
@@ -88,25 +95,24 @@
   display: flex;
   flex-direction: column;
   width: auto;
-  height: 100%;
   text-align: center;
   margin-top: 2.5%;
 }
 
 .portfolio_row {
+  height: max-content;
   margin-top: 25px;
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: space-around;
-  /* width: 50vw; */
-  height: auto;
 }
 
 .section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 70vh;
   padding-bottom: 25px;
   line-height: 1.5;
   padding-top: 20px;
@@ -118,7 +124,6 @@
   flex-direction: row;
   align-content: center;
   justify-content: center;
-  /* width: 50vw; */
   height: auto;
 }
 
@@ -143,13 +148,10 @@
 .left-column p,
 .right-column p {
   margin: 0 auto;
-  /* margin-bottom: 40px; */
   color: #285172;
   font-size: 1.2em;
   text-align: left;
   vertical-align: top;
-  /* margin-left: 10%;
-  margin-right: 10%; */
 }
 
 .column p {
@@ -168,7 +170,10 @@ hr {
   width: 15%;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin-top: 20px;
   color: #285172;
   text-transform: uppercase;
@@ -208,14 +213,31 @@ Transition effects solved with:
 https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-page-load
 */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
+  .portfolio_item {
+    height: auto;
+    width: 300px;
+  }
 
+  .portfolio_image {
+    width: 250px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #portfolio {
+    height: auto;
+  }
+  .section {
+    height: auto;
+  }
   header {
     font-size: 15px;
   }
   .left-column {
     width: 50%;
-  } 
+  }
   .right-column {
     width: 50%;
   }
@@ -231,6 +253,7 @@ https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-pag
   .portfolio_item {
     width: 250px;
     height: auto;
+    margin-top: 5%;
   }
 
   .portfolio_image {
@@ -241,15 +264,17 @@ https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-pag
 }
 
 @media screen and (max-width: 900px) {
-  
+  .icon_footer {
+    margin-top: 50px;
+  }
+
   header {
     font-size: 10px;
   }
 
-  .left-column, .right-column{
+  .left-column,
+  .right-column {
     margin-top: 5%;
-    /* margin-left: 5%;
-    margin-right: 5%; */
     width: auto;
   }
 
@@ -261,7 +286,7 @@ https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-pag
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .portfolio_row {
     flex-direction: column;
     justify-content: center;
@@ -270,25 +295,22 @@ https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-pag
 
   .portfolio_item {
     margin-top: 5%;
-    width: 350px;
-    height: 400px;
+    width: 250px;
+    height: auto;
   }
 
   .column {
     width: auto;
   }
-  
+
   .left-column p,
   .right-column p {
-    /* text-align: left; */
-    /* margin-left: 5%;
-    margin-right: 5%; */
     font-size: 1em;
   }
 
   h1,
   h2,
-  h3 {
+  h3  {
     text-align: center;
   }
 
@@ -304,12 +326,11 @@ https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-pag
     font-size: 1em;
     margin: 0 auto;
   }
-  
+
   ul {
     display: inline-block;
-    /* margin-left: 5%; */
   }
-  
+
   #container {
     margin-top: 5%;
   }
@@ -329,6 +350,6 @@ https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-pag
   .portfolio_item {
     margin-top: 5%;
     width: 250px;
-    height: 300;
+    height: auto;
   }
 }
